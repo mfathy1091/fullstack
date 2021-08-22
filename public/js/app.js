@@ -1846,7 +1846,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
- //window.Vue = require('vue')
 
 
 vue__WEBPACK_IMPORTED_MODULE_1__.default.component('mainapp', __webpack_require__(/*! ./components/mainapp.vue */ "./resources/js/components/mainapp.vue").default);
