@@ -7,13 +7,13 @@ import router from './router'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 Vue.use(ViewUI);
-// import common from './common'
 // import jsonToHtml from './jsonToHtml'
-// Vue.mixin(common)
 // Vue.mixin(jsonToHtml)
 // import Editor from 'vue-editor-js'
 // Vue.use(Editor)
 
+import common from './common'
+Vue.mixin(common)
 
 Vue.component('mainapp', require('./components/mainapp.vue').default);
 
