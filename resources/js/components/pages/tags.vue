@@ -26,8 +26,8 @@
 								<td class="_table_name">{{tag.tagName}}</td>
 								<td>{{tag.created_at}}</td>
 								<td>
-									<Button type="info" size="small">Info</Button>
-									<Button type="error" size="small">Error</Button>
+									<Button type="info" size="small">Edit</Button>
+									<Button type="error" size="small">Delete</Button>
 								</td>
 							</tr>
 
@@ -79,7 +79,15 @@ export default {
 				this.addModal = false
 				this.data.tagName = ""
 			}else{
-				this.generic()
+				if(res.status==422){
+					if(res.data.errors.tagName){
+						this.info(res.data.errors.tagName[0])
+					}
+					console.log(res.data.errors.tagName[0])
+				}else{
+					this.generic()
+				}
+				
 			}
 		}
 	},

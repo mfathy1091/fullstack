@@ -2153,7 +2153,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.addModal = false;
                   _this.data.tagName = "";
                 } else {
-                  _this.generic();
+                  if (res.status == 422) {
+                    if (res.data.errors.tagName) {
+                      _this.info(res.data.errors.tagName[0]);
+                    }
+
+                    console.log(res.data.errors.tagName[0]);
+                  } else {
+                    _this.generic();
+                  }
                 }
 
               case 6:
@@ -68331,13 +68339,13 @@ var render = function() {
                                 _c(
                                   "Button",
                                   { attrs: { type: "info", size: "small" } },
-                                  [_vm._v("Info")]
+                                  [_vm._v("Edit")]
                                 ),
                                 _vm._v(" "),
                                 _c(
                                   "Button",
                                   { attrs: { type: "error", size: "small" } },
-                                  [_vm._v("Error")]
+                                  [_vm._v("Delete")]
                                 )
                               ],
                               1
